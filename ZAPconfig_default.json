@@ -1,0 +1,74 @@
+{
+  "default":{
+	  "ZAP_apikey":"api_key",
+	  "ZAP_baseURL":"http://127.0.0.1:8082",
+	  "ZAP_apiformat":"JSON"
+  },
+  "ZAP_core":{
+	  "viewSitesPath":"json/core/view/sites",
+	  "viewAlertsPath":"json/core/view/alerts",
+	  "newSessionPath":"json/core/action/newSession",
+	  "sessionName":"AppSec_session"
+  },
+  "application":{
+      "excludeSites":["example.com*","http://<sitestoexclude>.*"],
+	  "excludeDomain":["google"],
+	  "loginURL":"https://example.com/",
+      "userNameParameter":"username",
+      "passwordParameter":"password",
+      "otherLoginParameters":"targetUrl=/test",
+      "loggedInIndicatorRegex":"Logout",
+      "loggedOutIndicatorRegex":"Login",
+      "applicationURL":"https://example.com/",
+      "userName":"username",
+      "password":"password",
+      "customScanPolicy":"False",
+      "scanRequestHeader":"False"
+  },
+  "ascan":{
+      "excludeFromScanPath":"json/ascan/action/excludeFromScan",  
+      "activescanPath":"json/ascan/action/scan",
+      "scanAsUser":"json/ascan/action/scanAsUser",
+	  "scanstatusPath":"json/ascan/view/status",
+	  "viewScannersPath":"json/ascan/view/scanners",
+	  "testNames":["Path Traversal","Remote File Inclusion","Server Side Include","Cross Site Scripting (Reflected)",
+	               "Cross Site Scripting (Persistent)","SQL Injection","Server Side Code Injection","Remote OS Command Injection",
+	               "Directory Browsing","External Redirect","Parameter Tampering","Cross Site Scripting (Persistent) - Prime",
+	               "Cross Site Scripting (Persistent) - Spider","Script Active Scan Rules","Source Code Disclosure - CVE-2012-1823",
+	               "Remote Code Execution - CVE-2012-1823","Session Fixation","Advanced SQL Injection","XPath Injection",
+	               "XML External Entity Attack","Insecure HTTP Method","LDAP Injection","HTTP Only Site","Proxy Disclosure",
+	               "HTTPS Content Available via HTTP"],
+	 "scanPolicyName":"customscan",              
+	 "addScanPolicyPath":"json/ascan/action/addScanPolicy",
+	 "removeScanPolicyPath":"json/ascan/action/removeScanPolicy",
+	 "disableAllScannersPath":"json/ascan/action/disableAllScanners",
+	 "enableScannersPath":"json/ascan/action/enableScanners",
+	 "scanAllRequestHeadersPath":"json/ascan/action/setOptionScanHeadersAllRequests"	               
+  },
+  "context":{
+      "name":"ZAP_AppSec",
+      "createContextPath":"json/context/action/newContext",
+      "removeContextPath":"json/context/action/removeContext",
+      "contextListPath":"json/context/view/contextList",
+      "includeContextPath":"json/context/action/includeInContext"
+  },
+  "alertFilter":{
+      "addAlertFilterPath":"json/alertFilter/action/addAlertFilter"
+  },
+  "authentication":{
+      "setAuthMethodPath":"json/authentication/action/setAuthenticationMethod",
+      "setLoggedInIndicatorPath":"json/authentication/action/setLoggedInIndicator",
+      "setLoggedOutIndicatorPath":"json/authentication/action/setLoggedOutIndicator",
+      "authMethodName":"formBasedAuthentication"
+  },
+  "users":{
+      "newUserPath":"json/users/action/newUser",
+      "setAuthCredsPath":"json/users/action/setAuthenticationCredentials",
+      "setUserEnabledPath":"json/users/action/setUserEnabled/"
+  },
+  "spider":{
+      "scanAsUserPath":"json/spider/action/scanAsUser",
+      "spiderStatus_User":"json/spider/view/status"
+  }
+}
+	
