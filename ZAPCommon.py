@@ -2,13 +2,12 @@
 
 '''
 /*
- * @File: cross-account-aws-resources.py
+ * @File: ZAPCommon.py
  * @Author: Arunkumar Sadasivan
  * @Date: Apr 15th 2017
- * @Description: This class sets form authentication for session handling. Set Log in and log out indicator to 
-                 specify if the application is in session. Setting this helps Zap to see if it needs to authenticate.
-                 It also creates a new user and enables it to perform authentication.
- * @Usage: 
+ * @Description: This class contains all common methods like initiating the ZAP request, create session, create context and 
+                 also create custom scan test policy. 
+ * @Usage: N/A
  */
 '''
 
