@@ -8,7 +8,7 @@
  * @Description: This class sets form authentication for session handling. Set Log in and log out indicator to 
                  specify if the application is in session. Setting this helps Zap to see if it needs to authenticate.
                  It also creates a new user and enables it to perform authentication.
- * @Usage: 
+ * @Usage: N/A
  */
 '''
 
