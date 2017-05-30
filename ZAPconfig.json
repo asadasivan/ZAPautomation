@@ -1,4 +1,7 @@
 {
+  "ZAP_info":{
+	  "ZAP_version":"2.6.0"
+  },	
   "default":{
 	  "ZAP_apikey":"api_key",
 	  "ZAP_baseURL":"http://127.0.0.1:8082",
