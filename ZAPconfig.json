@@ -1,6 +1,7 @@
 {
   "ZAP_info":{
-	  "ZAP_version":"2.6.0"
+	  "ZAP_version":"2.6.0",
+	  "ZAP_directory":"/opt/"
   },	
   "default":{
 	  "ZAP_apikey":"api_key",
