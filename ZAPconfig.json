@@ -12,12 +12,13 @@
 	  "viewSitesPath":"json/core/view/sites",
 	  "viewAlertsPath":"json/core/view/alerts",
 	  "newSessionPath":"json/core/action/newSession",
+    "loadSessionPath":"json/core/action/loadSession",
 	  "sessionName":"AppSec_session"
   },
   "application":{
       "excludeSites":["example.com*","http://<sitestoexclude>.*"],
-	  "excludeDomain":["google"],
-	  "loginURL":"https://example.com/",
+    "excludeDomain":["google"],
+    "loginURL":"https://example.com/",
       "userNameParameter":"username",
       "passwordParameter":"password",
       "otherLoginParameters":"targetUrl=/test",
@@ -26,7 +27,7 @@
       "applicationURL":"https://example.com/",
       "userName":"username",
       "password":"password",
-      "customScanPolicy":"True",
+      "customScanPolicy":"False",
       "scanRequestHeader":"False"
   },
   "ascan":{

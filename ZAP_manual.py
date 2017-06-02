@@ -68,6 +68,7 @@ Uncomment after testing is done
 FormAuth = ZAPFormAuth.FormAuth(ZAPCommon)
 # Alert filter requires target applications to be in the context of ZAP
 # include all URLs in history to Context
+ZAPCommon.loadSession() #Need to see if this works
 contextName = config['context']['name']
 create_response = ZAPCommon.createContext(contextName)
 contextId = create_response.json()['contextId']

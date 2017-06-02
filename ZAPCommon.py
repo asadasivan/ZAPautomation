@@ -15,6 +15,7 @@ import sys
 import requests
 import urllib
 import json
+import os
 
 ############ Default Values ############
 configFile = 'ZAPconfig.json' # configuration file
@@ -267,6 +268,16 @@ class ZAPCommon(object):
         for name in names:
             ids = ids + self.getScanPolicyID(name) + ","
         return ids
+
+    def loadSession(self):
+        sessionFile = self.config['application']['sessionFile']
+        zapDirectory = self.config['ZAP_info']['ZAP_directory']
+        os.system('mv ~/%s %s/zap/session/%s'%(sessionFile, zapDirectory, sessionFile))
+        loadSessionPath = self.config['ZAP_core']['loadSessionPath']
+        payload = {'zapapiformat':self.ZAP_apiformat,'apikey':self.ZAP_apikey,'name':sessionFile}
+        loadSession_resp = self.initiateZAPAPI(loadSessionPath,'','',payload)
+        if loadSession_resp.status_code == 200:
+            print "[Done] Session successfully loaded"
 
 
     
