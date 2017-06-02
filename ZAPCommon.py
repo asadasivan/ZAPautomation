@@ -135,7 +135,8 @@ class ZAPCommon(object):
 
     def createScanPolicy(self,scanPolicyName):
         #scanPolicyName = data['ascan']['scanPolicyName']
-        self.removeScanPolicy(scanPolicyName) # remove existing configuration if it exists
+        if scanPolicyName in self.getScanPolicies()['scanPolicyNames']:
+            self.removeScanPolicy(scanPolicyName) # remove existing configuration if it exists
         addScanPolicyPath = self.config['ascan']['addScanPolicyPath']
         payload = {'zapapiformat':self.ZAP_apiformat,'apikey':self.ZAP_apikey,'scanPolicyName':scanPolicyName}
         addScanPolicy_response = self.initiateZAPAPI(addScanPolicyPath,'','',payload)
@@ -159,7 +160,13 @@ class ZAPCommon(object):
         payload = {'zapapiformat':self.ZAP_apiformat,'apikey':self.ZAP_apikey,'scanPolicyName':scanPolicyName,'ids':testIDs}
         enableScanners_resp = self.initiateZAPAPI(enableScannersPath,'','',payload)
         return enableScanners_resp   
-    
+
+    def getScanPolicies(self):
+        getScanPoliciesPath=self.config['ascan']['viewScanPoliciesPath']
+        payload = {'zapapiformat':self.ZAP_apiformat,'apikey':self.ZAP_apikey}
+        getPolicies_response = self.initiateZAPAPI(getScanPoliciesPath,'','',payload)
+        return getPolicies_response
+
     # Create custom scan or test policy
     def createCustomScanTest(self,scanPolicyName):
         #scanPolicyName = data['ascan']['scanPolicyName']
@@ -253,7 +260,14 @@ class ZAPCommon(object):
         payload = {'zapapiformat':self.ZAP_apiformat,'apikey':self.ZAP_apikey,'contextId':contextId,'userId':userId,'enabled':True}
         enableUser_resp = self.initiateZAPAPI(enableUserPath,'','',payload)
         if enableUser_resp.status_code == 200:
-            print "[Done] User: " + userName + " successfully enabled." 
+            print "[Done] User: " + userName + " successfully enabled."
+
+    def getIDs(self,names):
+        ids = ""
+        for name in names:
+            ids = ids + self.getScanPolicyID(name) + ","
+        return ids
+
 
     
 ##############################################################################################################

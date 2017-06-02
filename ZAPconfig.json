@@ -4,8 +4,8 @@
 	  "ZAP_directory":"/opt/"
   },	
   "default":{
-	  "ZAP_apikey":"api_key",
-	  "ZAP_baseURL":"http://127.0.0.1:8082",
+	  "ZAP_apikey":"a5id7vfgmfq0cp9hedehr75d5i",
+	  "ZAP_baseURL":"http://127.0.0.1:8080",
 	  "ZAP_apiformat":"JSON"
   },
   "ZAP_core":{
@@ -26,7 +26,7 @@
       "applicationURL":"https://example.com/",
       "userName":"username",
       "password":"password",
-      "customScanPolicy":"False",
+      "customScanPolicy":"True",
       "scanRequestHeader":"False"
   },
   "ascan":{
@@ -35,13 +35,8 @@
       "scanAsUser":"json/ascan/action/scanAsUser",
 	  "scanstatusPath":"json/ascan/view/status",
 	  "viewScannersPath":"json/ascan/view/scanners",
-	  "testNames":["Path Traversal","Remote File Inclusion","Server Side Include","Cross Site Scripting (Reflected)",
-	               "Cross Site Scripting (Persistent)","SQL Injection","Server Side Code Injection","Remote OS Command Injection",
-	               "Directory Browsing","External Redirect","Parameter Tampering","Cross Site Scripting (Persistent) - Prime",
-	               "Cross Site Scripting (Persistent) - Spider","Script Active Scan Rules","Source Code Disclosure - CVE-2012-1823",
-	               "Remote Code Execution - CVE-2012-1823","Session Fixation","Advanced SQL Injection","XPath Injection",
-	               "XML External Entity Attack","Insecure HTTP Method","LDAP Injection","HTTP Only Site","Proxy Disclosure",
-	               "HTTPS Content Available via HTTP"],
+      "viewScanPoliciesPath":"json/ascan/view/scanPolicyNames",
+	  "testNames":["Path Traversal", "Cross Site Scripting (Reflected)", "Cross Site Scripting (Persistent)","SQL Injection","Server Side Code Injection","Cross Site Scripting (Persistent) - Prime", "Cross Site Scripting (Persistent) - Spider"],
 	 "scanPolicyName":"customscan",              
 	 "addScanPolicyPath":"json/ascan/action/addScanPolicy",
 	 "removeScanPolicyPath":"json/ascan/action/removeScanPolicy",
