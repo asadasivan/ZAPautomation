@@ -25,7 +25,7 @@ python
 
 
 ## Getting Help
-contact Arunkumar Sadasivan <mailtosarun@gmail.com>
+contact Arunkumar Sadasivan <contact.arunsec@gmail.com>
 
 ## Contributing
 1. Fork it
